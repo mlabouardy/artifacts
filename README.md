@@ -1,0 +1,2 @@
+# artifacts
+Maven artifacts
