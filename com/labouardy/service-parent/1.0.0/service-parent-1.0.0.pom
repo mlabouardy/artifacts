@@ -68,7 +68,7 @@
 				<version>0.11</version>
 				<configuration>
 					<merge>true</merge>
-					<message>Maven artifacts for ${project.version}</message>
+					<message>Maven artifacts for ${project.artifactId}:${project.version}</message>
 					<noJekyll>true</noJekyll>
 					<outputDirectory>${project.build.directory}/maven-repo</outputDirectory>
 					<branch>refs/heads/maven-repo</branch>
@@ -92,7 +92,7 @@
 
 	<repositories>
 		<repository>
-			<id>YOUR-PROJECT-NAME-mvn-repo</id>
+			<id>github-repository</id>
 			<url>https://raw.github.com/mlabouardy/artifacts/maven-repo/</url>
 			<snapshots>
 				<enabled>true</enabled>
