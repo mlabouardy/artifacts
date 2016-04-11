@@ -17,11 +17,21 @@
 	</properties>
 
 	<distributionManagement>
-		<repository>
+		 <repository>
 			<id>internal.repo</id>
 			<name>Temporary Staging Repository</name>
 			<url>file://${project.build.directory}/maven-repo</url>
+		</repository> 
+		<!--<repository>
+			<id>nexus</id>
+			<name>My releases</name>
+			<url>http://192.168.99.102:8081/content/repositories/releases/</url>
 		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>My releases</name>
+			<url>http://192.168.99.102:8081/content/repositories/snapshots/</url>
+		</snapshotRepository>-->
 	</distributionManagement>
 
 	<dependencyManagement>
@@ -68,7 +78,8 @@
 				<version>0.11</version>
 				<configuration>
 					<merge>true</merge>
-					<message>Maven artifacts for ${project.artifactId}:${project.version}</message>
+					<message>Maven artifacts for
+						${project.artifactId}:${project.version}</message>
 					<noJekyll>true</noJekyll>
 					<outputDirectory>${project.build.directory}/maven-repo</outputDirectory>
 					<branch>refs/heads/maven-repo</branch>
@@ -86,7 +97,7 @@
 						<phase>deploy</phase>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> 
 		</plugins>
 	</build>
 
